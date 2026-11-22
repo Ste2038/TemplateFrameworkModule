@@ -1,19 +1,18 @@
 # GitHub template workflow
 
-## Publish this folder as the template repository
+## Source repository
 
-No GitHub remote has been created by the scaffold setup. Decide the owner/account, visibility and license before publishing. Create an empty GitHub repository named TemplateFrameworkModule (do not prepopulate README, license or .gitignore). From this folder:
+The template is published at https://github.com/Ste2038/TemplateFrameworkModule with SSH remote `git@github.com:Ste2038/TemplateFrameworkModule.git`. The release branch is `master`; this release is `v1.0`. Repository administrators should enable **Settings → General → Template repository** if it is not already enabled.
+
+Use the immutable source tag to identify the release. In a checkout of the source template, resolve its commit with:
 
 ```sh
-git init -b main
-git add .
-git diff --cached --stat
-git commit -m "Create KiCad module template"
-git remote add origin git@github.com:YOUR_ACCOUNT/TemplateFrameworkModule.git
-git push -u origin main
+git rev-parse 'v1.0^{commit}'
 ```
 
-Replace YOUR_ACCOUNT. Review staged files before committing. If Git is already initialized, skip initialization and inspect existing remotes rather than overwriting them. On GitHub open repository **Settings → General**, enable **Template repository**, and verify that **Use this template** appears. Repository admin access is required. Set an appropriate description and choose licensing deliberately; this scaffold grants no explicit reuse license.
+Verify a newly generated project's contents against the intended source release before recording its provenance; the repository's default branch may contain later changes.
+
+Follow [RELEASE_WORKFLOW.md](RELEASE_WORKFLOW.md): develop on `develop`, merge production-ready work into `master`, and tag the master release commit. This policy is inherited by every generated project.
 
 ## Create each future module
 
@@ -24,13 +23,14 @@ Replace YOUR_ACCOUNT. Review staged files before committing. If Git is already i
 ```sh
 git clone git@github.com:YOUR_ACCOUNT/MyModule.git
 cd MyModule
+git switch -c develop master
 python3 scripts/new_module.py MyModule
 ```
 
 4. Open MyModule.kicad_pro and update docs/MODULE.md, README.md, title blocks and revision information. Before design work, complete [TEMPLATE_TRACKING.md](TEMPLATE_TRACKING.md) with the actual source template URL, tag and full source commit SHA. The generated repository commit is not the source template commit. Follow [TEMPLATE_UPGRADES.md](TEMPLATE_UPGRADES.md) for version identification and future upgrades.
-5. Review and commit the renamed files and module definition, then push to the new module repository.
+5. Review and commit the renamed files and module definition, then push develop to the new module repository with `git push -u origin develop`.
 
-Use a filesystem-safe name beginning with a letter, followed by letters, numbers, underscores or hyphens. Run the rename once with KiCad closed. It refuses an already renamed project, filename collisions, and the original TemplateFrameworkModule folder. It changes the project trio and project metadata only; it does not rewrite prose or alter schematic/board UUIDs. Run it before adding custom sheets or a .kicad_dru file. If you downloaded a ZIP instead, name its extracted folder after the new module and initialize a fresh repository there.
+Use a filesystem-safe name beginning with a letter, followed by letters, numbers, underscores or hyphens. Run the rename once with KiCad closed. It refuses an already renamed project, filename collisions, and the original TemplateFrameworkModule folder. It changes the project trio and project metadata, resets PCB_REVISION to v0.1-dev, and preserves TEMPLATE_VERSION; it does not rewrite prose or alter schematic/board UUIDs. Run it before adding custom sheets or a .kicad_dru file. If you downloaded a ZIP instead, name its extracted folder after the new module and initialize a fresh repository there.
 
 A generated repository has its own history and is not a fork. Later template changes do not propagate automatically. Port selected improvements deliberately and verify them in the receiving design; do not merge entire unrelated histories to update a module.
 

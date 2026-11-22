@@ -628,6 +628,17 @@
 		(layer "Edge.Cuts")
 		(uuid "e58a247c-3cc7-4d90-996a-3a9ab8b10310")
 	)
+	(gr_text "${PCB_REVISION}"
+		(at 140 153 0)
+		(layer "F.SilkS")
+		(uuid "de843295-8149-457e-b30c-3c889b6b891d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
 	(gr_text "USB-C reference origin: X140 Y129, 0 deg\nVerify chosen plug against upstream P1"
 		(at 140 122 0)
 		(layer "Dwgs.User")

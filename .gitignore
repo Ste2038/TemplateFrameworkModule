@@ -1,0 +1,19 @@
+# KiCad local state, locks, backups and caches
+*.kicad_prl
+*.kicad_sch.lck
+*.kicad_pcb.lck
+~*.lck
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*-backups/
+_autosave-*
+fp-info-cache
+_rescue-backup/
+# Generated artifacts
+outputs/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

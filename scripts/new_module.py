@@ -30,6 +30,7 @@ def main():
     project = json.loads(sources[0].read_text())
     project.setdefault("meta", {})["filename"] = targets[0].name
     project.setdefault("text_variables", {})["MODULE_NAME"] = args.name
+    project["text_variables"]["PCB_REVISION"] = "v0.1-dev"
     renamed = []
     original = sources[0].read_bytes()
     try:

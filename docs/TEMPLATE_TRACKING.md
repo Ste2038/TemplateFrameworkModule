@@ -8,11 +8,11 @@ Complete this document in every generated prototype before design work. Follow [
 | --- | --- |
 | Prototype name / repository | NOT YET CREATED |
 | Creation date | NOT YET CREATED |
-| Source template repository URL | UNPUBLISHED |
-| Source template release/tag | UNRELEASED — includes changes after initial 0.1.0 scaffold |
-| Exact source template commit SHA | UNAVAILABLE — source is not yet a Git repository |
-| Source had local modifications? | YES — unpublished local working tree; snapshot required if copied now |
-| Immutable source snapshot location and SHA-256 (if needed) | TO RECORD BEFORE LOCAL COPYING |
+| Source template repository URL | https://github.com/Ste2038/TemplateFrameworkModule |
+| Source template release/tag | v1.0 (verify the actual revision copied) |
+| Exact source template commit SHA | TO RECORD in each prototype: resolve v1.0^{commit} in the source repository if created from that release |
+| Source had local modifications? | TO VERIFY when creating the prototype; NO only for an unmodified release checkout |
+| Immutable source snapshot location and SHA-256 (if needed) | Not needed for an unmodified tagged checkout; required for a modified local copy |
 | Original template project basename | TemplateFrameworkModule |
 | Prototype project basename | TO RECORD |
 | KiCad version used at creation | TO RECORD (template baseline: 9.0.9) |

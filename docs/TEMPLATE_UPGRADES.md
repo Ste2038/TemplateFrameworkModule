@@ -4,7 +4,7 @@
 
 Before changing a generated project, the next agent must complete `docs/TEMPLATE_TRACKING.md` and commit it with the initial project setup. This applies to GitHub-generated repositories, ZIP copies and native KiCad template projects.
 
-Record the template repository URL, release/tag, full source commit SHA, creation date, original project basename and the new module basename. Obtain the SHA from the source template repository at the revision actually copied, not from the generated project's new Git history. A branch name such as main is not a stable version identifier. Keep an untouched archive or checkout of that exact source revision available for later comparisons.
+Record the template repository URL, release/tag, full source commit SHA, creation date, original project basename and the new module basename. Obtain the SHA from the source template repository at the revision actually copied, not from the generated project's new Git history. A branch name such as master or develop is not a stable version identifier. Keep an untouched archive or checkout of that exact source revision available for later comparisons.
 
 If starting from an unpublished or modified local copy, record that fact, its source commit if any, and preserve an immutable snapshot of the actual copied files with a SHA-256 checksum. A commit alone does not identify uncommitted changes. Do not invent a release or SHA. Resolve unknown provenance before assuming any automatic upgrade is safe.
 
@@ -12,15 +12,17 @@ The creation baseline is permanent. Never replace it with a newer template versi
 
 ## Current source status
 
-This folder has no Git repository or release tag yet. CHANGELOG.md contains the initial 0.1.0 scaffold and subsequent unreleased changes; the KiCad TEMPLATE_VERSION text variable still identifies that initial scaffold. Neither value alone uniquely identifies the current files. Record the eventual published source commit/tag or a checksummed local snapshot when creating a prototype. v1 and v2 below are examples, not releases that already exist.
+Source repository: https://github.com/Ste2038/TemplateFrameworkModule. This template release is **v1.0**. Resolve its full source commit from the immutable annotated tag in the source repository using `git rev-parse 'v1.0^{commit}'`. Record that SHA in each derived project's tracking record; do not substitute the newly generated repository's commit. A release cannot embed its own final commit hash in its contents. For copies from later development commits, record the actual commit and working-tree state rather than assuming v1.0 from the inherited text variable.
 
 ## Publishing template versions
+
+Follow [RELEASE_WORKFLOW.md](RELEASE_WORKFLOW.md): develop on develop, merge approved release work into master, and tag that master commit. This applies equally to templates and derived prototypes.
 
 For each release, maintain an immutable version tag tied to a specific commit. Update CHANGELOG.md, the KiCad TEMPLATE_VERSION variable and release documentation consistently. Include migration notes explaining affected files, behavioral/mechanical changes, compatibility constraints and required checks. Never move an old release tag to new contents. Keep old versions accessible so agents can compare them with later versions.
 
 ## Reconcile an existing v1 prototype with v2
 
-1. Read its provenance and migration ledger. Preserve current work and create a dedicated upgrade branch/checkpoint in the prototype repository.
+1. Read its provenance and migration ledger. Preserve current work and create a dedicated upgrade branch from develop (or checkpoint on develop) in the prototype repository. Merge completed upgrade work back into develop; promotion to master follows the release workflow.
 2. Obtain clean source snapshots of the recorded baseline (or last fully reconciled revision) and the desired newer template revision. Verify their commit IDs or snapshot checksums. Compare those two template versions to identify only changes introduced by the template.
 3. Compare each template change against the existing prototype. Account for renamed project files using the recorded basename mapping. Review all three versions: old template, new template, and current prototype. Do not overwrite the prototype with the new template, re-run the naming script, or merge unrelated histories wholesale.
 4. List each relevant change in the migration ledger as applied, adapted, deferred or not applicable, with reasons and affected files. Preserve module-specific circuitry, routing, UUIDs, libraries, constraints, documentation and manufacturing revisions. Reassess mechanical fit when outlines, holes, connector placement or enclosure CAD change.
