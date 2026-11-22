@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "FrameworkMechanical")(type "KiCad")(uri "${KIPRJMOD}/libraries/footprints/FrameworkMechanical.pretty")(options "")(descr "Mechanical footprints adapted from Framework ExpansionCards"))
+)

@@ -1,0 +1,66 @@
+{
+  "commit": "2904a95d60d4ba771c5c3c56d6fdba7078243fe8",
+  "retrieved": "2026-11-22",
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/FrameworkComputer/ExpansionCards/2904a95d60d4ba771c5c3c56d6fdba7078243fe8/LICENSE",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+    },
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/FrameworkComputer/ExpansionCards/2904a95d60d4ba771c5c3c56d6fdba7078243fe8/README.md",
+      "sha256": "b04d28127eb43d9670b587df7453d87a0bd0dfb7658aba3d61b886fa3e40d6f2"
+    },
+    {
+      "path": "Electrical/README.md",
+      "url": "https://raw.githubusercontent.com/FrameworkComputer/ExpansionCards/2904a95d60d4ba771c5c3c56d6fdba7078243fe8/Electrical/README.md",
+      "sha256": "3be8f1562a1d7a89b7f204d7aed622fa1d9e4a373e328b15fb3253e2451c7cd0"
+    },
+    {
+      "path": "Mechanical/README.md",
+      "url": "https://raw.githubusercontent.com/FrameworkComputer/ExpansionCards/2904a95d60d4ba771c5c3c56d6fdba7078243fe8/Mechanical/README.md",
+      "sha256": "004a0d26766b3b218a8e44b69de1742b69a9c89ec9fc96a51fa4d786e5fd30a5"
+    },
+    {
+      "path": "Mechanical/OpenSCAD/ExpansionCard.scad",
+      "url": "https://raw.githubusercontent.com/FrameworkComputer/ExpansionCards/2904a95d60d4ba771c5c3c56d6fdba7078243fe8/Mechanical/OpenSCAD/ExpansionCard.scad",
+      "sha256": "3c43cc006d6a28f0f149204e0134939e203933146abbaa54b160acd8f029b8e6"
+    },
+    {
+      "path": "Mechanical/Printable/2D/ExpansionCard_Printable_M2.pdf",
+      "url": "https://raw.githubusercontent.com/FrameworkComputer/ExpansionCards/2904a95d60d4ba771c5c3c56d6fdba7078243fe8/Mechanical/Printable/2D/ExpansionCard_Printable_M2.pdf",
+      "sha256": "92dd0e94832280c2b5a905a99160dd0a722b84fc11d0539ecd3b3370eb61f596"
+    },
+    {
+      "path": "Mechanical/Printable/2D/ExpansionCard_Printable_Outline.dxf",
+      "url": "https://raw.githubusercontent.com/FrameworkComputer/ExpansionCards/2904a95d60d4ba771c5c3c56d6fdba7078243fe8/Mechanical/Printable/2D/ExpansionCard_Printable_Outline.dxf",
+      "sha256": "c72d980c2a7b5cea5896407caf25aea0b8f0306055d75c995cdbae918cfeea65"
+    },
+    {
+      "path": "Mechanical/Printable/3D/ExpansionCard_SelfTapping.stl",
+      "url": "https://raw.githubusercontent.com/FrameworkComputer/ExpansionCards/2904a95d60d4ba771c5c3c56d6fdba7078243fe8/Mechanical/Printable/3D/ExpansionCard_SelfTapping.stl",
+      "sha256": "1c1f709830333e8fe5b1a889fc184a88fd4a51452d4caaccc8f4b450f7105d8d"
+    },
+    {
+      "path": "Mechanical/Printable/3D/ExpansionCard_SelfTapping.stp",
+      "url": "https://raw.githubusercontent.com/FrameworkComputer/ExpansionCards/2904a95d60d4ba771c5c3c56d6fdba7078243fe8/Mechanical/Printable/3D/ExpansionCard_SelfTapping.stp",
+      "sha256": "4d44d4fb5606a535271b522be98c48eeee4d1d05a6db9670a6ef7ca95606c3f2"
+    },
+    {
+      "path": "Mechanical/Printable/3D/ExpansionCard_ThreadedInsert.stl",
+      "url": "https://raw.githubusercontent.com/FrameworkComputer/ExpansionCards/2904a95d60d4ba771c5c3c56d6fdba7078243fe8/Mechanical/Printable/3D/ExpansionCard_ThreadedInsert.stl",
+      "sha256": "92c401b4880ed1262ebc939911455b1c9da729dd594b2892c98ab40baf44e16a"
+    },
+    {
+      "path": "Mechanical/Printable/3D/ExpansionCard_ThreadedInsert.stp",
+      "url": "https://raw.githubusercontent.com/FrameworkComputer/ExpansionCards/2904a95d60d4ba771c5c3c56d6fdba7078243fe8/Mechanical/Printable/3D/ExpansionCard_ThreadedInsert.stp",
+      "sha256": "6128186260b22ace271e83f096e2c16707b60866b3aa1b3a3f2ea0e38c3c7c09"
+    },
+    {
+      "path": "Electrical/KiCad_templates/Expansion_Card/Expansion_Card.kicad_pcb",
+      "url": "https://raw.githubusercontent.com/FrameworkComputer/ExpansionCards/2904a95d60d4ba771c5c3c56d6fdba7078243fe8/Electrical/KiCad_templates/Expansion_Card/Expansion_Card.kicad_pcb",
+      "sha256": "3e96ffe6451907c6369fab3093d079ec117f2efcf4ad738a6b4e5de093a4f87f"
+    }
+  ]
+}
