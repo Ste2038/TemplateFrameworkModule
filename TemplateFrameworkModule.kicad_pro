@@ -330,5 +330,8 @@
     "legacy_lib_list": []
   },
   "sheets": [],
-  "text_variables": {}
+  "text_variables": {
+    "TEMPLATE_VERSION": "v1.0",
+    "PCB_REVISION": "v1.0"
+  }
 }

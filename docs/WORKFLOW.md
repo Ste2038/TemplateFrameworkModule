@@ -37,6 +37,8 @@ Read the reports even if the command completes. The mechanical baseline currentl
 
 ## Manufacturing and releases
 
+Follow [RELEASE_WORKFLOW.md](RELEASE_WORKFLOW.md): prepare on develop, merge approved release work into master, tag the master commit and return to develop.
+
 Only export manufacturing data after the release checklist is complete. Generate Gerbers, drill files, BOM and placement files through KiCad's fabrication/export dialogs with settings agreed with the fabricator. Verify units, origin, board revision, bottom-side rotation conventions, DNP handling and layer mapping. Inspect outputs in Gerber Viewer. Archive reviewed outputs with a release tag and commit identifier, for example as GitHub release attachments; do not use local ignored outputs as the sole release record.
 
 ## Maintaining the template
@@ -44,3 +46,9 @@ Only export manufacturing data after the release checklist is complete. Generate
 Keep the shared mechanical baseline generic and add circuitry only when its function and constraints are established. When shared circuitry is approved, include source references and validation evidence. Version shared changes in CHANGELOG.md. Generated repositories do not automatically receive later template updates: selectively port and revalidate the relevant changes.
 
 Before starting or updating a prototype, read [TEMPLATE_UPGRADES.md](TEMPLATE_UPGRADES.md) and its [tracking record](TEMPLATE_TRACKING.md). Keep the original creation version immutable and record each later reconciliation separately.
+
+## PCB revision marking
+
+The PCB has `${PCB_REVISION}` text on F.SilkS. Set PCB_REVISION in Project Text Variables to the exact intended Git release tag before validation, committing and tagging. This template release uses v1.0. Check the rendered silkscreen and fabrication output; do not leave unresolved variables or a previous release number on a changed board. New module initialization sets v0.1-dev; use development-suffixed revisions for unreleased hardware.
+
+TEMPLATE_VERSION records the template baseline and is separate from the module's PCB_REVISION. Retain original source provenance in TEMPLATE_TRACKING.md even after updating the current template baseline. A prototype release tag belongs to that prototype's repository, not the source template repository.

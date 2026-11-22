@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased
+## v1.0 — 2026-11-22
+
+First tagged template release. Established develop → master → annotated tag workflow for this template and all derived projects. Included repository ignore rules and text/binary attributes. Added front-silkscreen revision marking and separate template/PCB revision variables. Derived module initialization resets the PCB revision to v0.1-dev.
 
 Added mandatory prototype provenance record and template upgrade procedure, separating permanent creation baseline from later reconciliation state. Linked the workflow in agent instructions, README, GitHub guide, module record and editing guide.
 

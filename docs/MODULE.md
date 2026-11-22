@@ -2,7 +2,7 @@
 
 Status: TEMPLATE / NOT READY FOR FABRICATION
 Owner: Stefano
-Template baseline: initial scaffold 0.1.0 plus unreleased changes; exact prototype provenance must be recorded in [TEMPLATE_TRACKING.md](TEMPLATE_TRACKING.md).
+Template baseline: v1.0; exact prototype provenance must be recorded in [TEMPLATE_TRACKING.md](TEMPLATE_TRACKING.md).
 Module name: TBD (set after generation)
 
 ## Requirements to resolve
@@ -30,6 +30,10 @@ Do not treat KiCad defaults as approved manufacturing constraints. Attach author
 Populate a table with pin number, host-side name, module net, direction, voltage, current limit, and source reference. Identify the view direction explicitly. Currently no pins are defined.
 
 ## Design decisions
+
+- 2026-11-22: Owner confirmed develop for ongoing work, with production-ready releases merged into master and tagged. This applies to the template and all derived projects; see RELEASE_WORKFLOW.md.
+
+- 2026-11-22: Publish template v1.0. Front silkscreen uses the PCB_REVISION project variable, set to v1.0 for this template release. New module initialization resets PCB_REVISION to v0.1-dev while retaining TEMPLATE_VERSION=v1.0.
 
 - 2026-11-22: Every prototype must retain its original source template version/commit and maintain a separate upgrade ledger; see TEMPLATE_UPGRADES.md and TEMPLATE_TRACKING.md. Documentation-only update; KiCad 9.0.9 files unchanged, ERC/DRC not rerun and previous results remain applicable. No new GUI or hardware testing performed.
 
@@ -62,6 +66,13 @@ KiCad CLI 9.0.9, initial uncommitted scaffold:
 - Upstream PDF visually reviewed; dimensional discrepancy recorded in MECHANICAL.md.
 - Schematic unchanged; previous zero-finding ERC applies to the still-empty schematic only.
 - No GUI 3D or physical fit/electrical tests performed. DRC does not validate enclosure fit or a functional circuit.
+
+### v1.0 release checks — 2026-11-22
+
+- KiCad 9.0.9: `kicad-cli pcb drc --exit-code-violations -o outputs/drc-v1.0.rpt TemplateFrameworkModule.kicad_pcb` and `kicad-cli sch erc --exit-code-violations -o outputs/erc-v1.0.rpt TemplateFrameworkModule.kicad_sch`: zero findings.
+- `kicad-cli pcb export svg --layers Edge.Cuts,F.SilkS --page-size-mode 2 -o outputs/pcb-v1.0.svg TemplateFrameworkModule.kicad_pcb`: exported and visually inspected; front marking resolves to v1.0.
+- Disposable generated ExampleModule: rename succeeded, TEMPLATE_VERSION remained v1.0, PCB_REVISION reset to v0.1-dev, and DRC passed.
+- This is a reusable template release, not production approval for a working module. Physical fit and hardware validation remain outstanding; no GUI 3D inspection performed.
 
 ## Release checklist
 

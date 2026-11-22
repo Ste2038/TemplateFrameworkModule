@@ -12,6 +12,10 @@ The same-basename .kicad_pro/.kicad_sch/.kicad_pcb trio is the editable design. 
 
 Before starting a prototype, read docs/TEMPLATE_UPGRADES.md and complete docs/TEMPLATE_TRACKING.md with the actual source template URL, release/tag and full commit SHA (or a checksummed snapshot for an unpublished local copy). Preserve that creation baseline forever. Record subsequent template updates separately with per-change decisions and validation evidence. Never infer the source SHA from the generated repository's history or treat a partial upgrade as fully aligned. Read the tracking record before changing an existing prototype.
 
+## Branch and release policy — mandatory
+
+Follow docs/RELEASE_WORKFLOW.md in this repository and every derived project. Work on develop (or feature branches merged into develop). Merge reviewed, production-ready changes into master and create an immutable annotated release tag on the master release commit. Return to develop afterward. Set PCB_REVISION to the exact release tag before committing; verify it renders on F.SilkS. Use a development-suffixed PCB revision before subsequent design changes. Template provenance remains separate from each module's release revision.
+
 ## Editing rules
 
 - Inspect git status and existing work before editing; preserve unrelated changes.
@@ -26,4 +30,4 @@ Before starting a prototype, read docs/TEMPLATE_UPGRADES.md and complete docs/TE
 
 ## Completion evidence
 
-Report changed files, KiCad version, exact verification performed, remaining ERC/DRC findings, and unresolved requirements. Update docs/MODULE.md and CHANGELOG.md for meaningful changes. If GUI review or hardware tests were unavailable, state that explicitly. GitHub publishing instructions are documented; no remote is configured by this scaffold.
+Report changed files, KiCad version, exact verification performed, remaining ERC/DRC findings, and unresolved requirements. Update docs/MODULE.md and CHANGELOG.md for meaningful changes. If GUI review or hardware tests were unavailable, state that explicitly. Source template remote: git@github.com:Ste2038/TemplateFrameworkModule.git. This template release is v1.0. Derived projects must use their own remote.

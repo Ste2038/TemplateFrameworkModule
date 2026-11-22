@@ -1,13 +1,17 @@
 # Framework Laptop 13 module template
 
+**Template release: v1.0.** Repository: https://github.com/Ste2038/TemplateFrameworkModule
+
 Personal KiCad starting point for Stefano's future Framework Laptop 13 modules. Requires KiCad 9 (created with 9.0.9).
 
 Open `TemplateFrameworkModule.kicad_pro` in KiCad Project Manager. The PCB includes the official printed-enclosure outline, mounting holes and 0.8 mm thickness. The schematic remains empty. This is a reusable mechanical baseline, not a validated working module.
 
+Development happens on `develop`; reviewed releases merge into `master` and receive an annotated tag. This applies to all derived projects. See [release workflow](docs/RELEASE_WORKFLOW.md).
+
 ## Start a module
 
 1. Create a repository using **Use this template → Create a new repository** on GitHub, then clone your new repository (see [GitHub guide](docs/GITHUB.md)).
-2. Close KiCad. Run `python3 scripts/new_module.py MyModule` in the new repository. This renames the project trio and updates project metadata; it refuses to run in this source folder.
+2. Create and switch to `develop` from the generated repository’s `master`. Close KiCad. Run `python3 scripts/new_module.py MyModule` in the new repository. This renames the project trio and updates project metadata; it refuses to run in this source folder.
 3. Before design work, complete [template tracking](docs/TEMPLATE_TRACKING.md) using the [version and upgrade guide](docs/TEMPLATE_UPGRADES.md). Record the exact source version/commit permanently. Open `MyModule.kicad_pro`, fill in [module requirements](docs/MODULE.md), and define the electrical function before adding circuitry. Read [mechanical guidance](docs/MECHANICAL.md) before changing the existing outline.
 4. Follow [editing and verification](docs/WORKFLOW.md). Replace this README introduction with your module's purpose and retain links to the guides.
 
@@ -24,6 +28,7 @@ Open `TemplateFrameworkModule.kicad_pro` in KiCad Project Manager. The PCB inclu
 | `docs/TEMPLATE_TRACKING.md` | Permanent creation baseline and append-only upgrade ledger |
 | `docs/TEMPLATE_UPGRADES.md` | How to reconcile existing prototypes with newer templates |
 | `docs/MODULE.md` | Requirements, pinout, mechanical and validation records |
+| `docs/RELEASE_WORKFLOW.md` | develop → master releases, tags and PCB markings |
 | `docs/WORKFLOW.md` | How to modify and validate the design |
 | `docs/GITHUB.md` | Publish this template and create independent module repos |
 | `AGENTS.md` | Instructions for future agents |
